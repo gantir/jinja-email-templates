@@ -11,5 +11,6 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = "3.7"
+Jinja2 = "2.10"
 
 [tool.poetry.dev-dependencies]
