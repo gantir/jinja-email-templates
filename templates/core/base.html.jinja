@@ -4,7 +4,9 @@
     {% include "core/_head.html.jinja" %}
     <title>{% block html_title %}{{ subject }}{% endblock %}</title>
     <!-- @todo: to take care of multiple style styles by passing appropriate parameter -->
+    {%- block style -%}
     {% include "core/_style.html.jinja" %}
+    {% endblock %}
   </head>
   <body>
     {%- block body_preheader -%}{% endblock %}
