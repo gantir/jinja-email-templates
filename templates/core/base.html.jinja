@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% include "core/_head.html.jinja" %}
+    <title>{% block html_title %}{{ subject }}{% endblock %}</title>
+    <!-- @todo: to take care of multiple style styles by passing appropriate parameter -->
+    {% include "core/_style.html.jinja" %}
+  </head>
+  <body>
+    {%- block body_preheader -%}{% endblock %}
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td align="center">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+              <td class="email-masthead">
+                <a href="{{company_url}}" class="f-fallback email-masthead_name">
+                  {{product_name}}
+              </a>
+              </td>
+            </tr>
+            <!-- Email Body -->
+            <tr>
+              <td class="email-body" width="570" cellpadding="0" cellspacing="0">
+                {%- block body_email %}{% endblock %}
+              </td>
+            </tr>
+            <!-- Footer -->
+            <tr>
+              <td>
+                {% include "core/_footer.html.jinja" %}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
